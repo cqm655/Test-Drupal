@@ -1,0 +1,21 @@
+uuid: 6e968982-d2a0-4ba5-a886-d8a3189e6738
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_magazine_date_of_signing
+    - node.type.magazine
+  module:
+    - datetime
+id: node.magazine.field_magazine_date_of_signing
+field_name: field_magazine_date_of_signing
+entity_type: node
+bundle: magazine
+label: 'Date of Signing'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

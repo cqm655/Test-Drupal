@@ -20,8 +20,22 @@
         "drupal/core-composer-scaffold": "^9.4",
         "drupal/core-project-message": "^9.4",
         "drupal/core-recommended": "^9.4",
+        "drupal/ctools": "^4.0",
+        "drupal/custom_nid": "1.4",
         "drupal/devel": "^5.0",
-        "drupal/module_filter": "^3.2"
+        "drupal/entity": "^1.4",
+        "drupal/entity_reference_labels": "^2.0",
+        "drupal/entityreference_extensions": "1.4",
+        "drupal/entityreference_filter": "1.4",
+        "drupal/facets": "2.0",
+        "drupal/features": "^3.12",
+        "drupal/field_formatter_range": "1.4",
+        "drupal/module_filter": "^3.2",
+        "drupal/panels": "^4.6",
+        "drupal/selective_better_exposed_filters": "dev-2.x",
+        "drupal/views_attachment_tabs": "1.1",
+        "drupal/views_field_view": "1.0.0-beta4",
+        "drush/drush": "^11.3"
     },
     "conflict": {
         "drupal/drupal": "*"

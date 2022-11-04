@@ -1,0 +1,13 @@
+uuid: 414fc2af-099a-4b71-b469-ef20b5ce7d87
+langcode: ru
+status: true
+dependencies:
+  enforced:
+    theme:
+      - olivero
+_core:
+  default_config_hash: Mt6cmxUbDZ9XxD6p25WQ8tj3_JcX8ylfcddwZc8gcAE
+id: olivero_medium
+label: 'Olivero Средний'
+locked: false
+pattern: 'j  F,  Y'

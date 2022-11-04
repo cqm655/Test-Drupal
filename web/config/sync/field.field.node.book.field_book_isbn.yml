@@ -1,0 +1,21 @@
+uuid: dee820e8-e154-405c-ba0d-d66dc0f637a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_book_isbn
+    - node.type.book
+  module:
+    - text
+id: node.book.field_book_isbn
+field_name: field_book_isbn
+entity_type: node
+bundle: book
+label: ISBN
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

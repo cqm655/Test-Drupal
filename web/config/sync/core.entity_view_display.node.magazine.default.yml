@@ -1,0 +1,79 @@
+uuid: 6f6e9ca9-ce1c-4e78-81df-af4c44675c3b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.magazine.field_magazine_author
+    - field.field.node.magazine.field_magazine_cover_image
+    - field.field.node.magazine.field_magazine_date_of_signing
+    - field.field.node.magazine.field_magazine_edition
+    - field.field.node.magazine.field_magazine_isbn
+    - field.field.node.magazine.field_magazine_publication_date
+    - node.type.magazine
+  module:
+    - datetime
+    - image
+    - text
+    - user
+id: node.magazine.default
+targetEntityType: node
+bundle: magazine
+mode: default
+content:
+  field_magazine_author:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_magazine_cover_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_magazine_date_of_signing:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_magazine_edition:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_magazine_isbn:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_magazine_publication_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

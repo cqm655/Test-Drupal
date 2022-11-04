@@ -1,0 +1,21 @@
+uuid: 8076b20d-c8b1-4745-97de-a5a243714ea2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_magazine_isbn
+    - node.type.magazine
+  module:
+    - text
+id: node.magazine.field_magazine_isbn
+field_name: field_magazine_isbn
+entity_type: node
+bundle: magazine
+label: ISBN
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

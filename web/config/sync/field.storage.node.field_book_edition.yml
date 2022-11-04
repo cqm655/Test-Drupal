@@ -1,0 +1,20 @@
+uuid: 22a211d4-dc21-49de-b849-f7697a99e88f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_book_edition
+field_name: field_book_edition
+entity_type: node
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
