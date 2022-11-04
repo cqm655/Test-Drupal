@@ -1,0 +1,21 @@
+uuid: 8120e0e8-08c3-4714-8f52-dd1e5df63068
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_magazine_author
+    - node.type.magazine
+  module:
+    - text
+id: node.magazine.field_magazine_author
+field_name: field_magazine_author
+entity_type: node
+bundle: magazine
+label: Author
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

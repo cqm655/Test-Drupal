@@ -1,0 +1,20 @@
+uuid: fdfa39cc-7508-4b3f-878c-c6aeafc8bacc
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_magazine_edition
+field_name: field_magazine_edition
+entity_type: node
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,21 @@
+uuid: 6b9889ca-baac-4803-8080-cfa69b889a0d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_magazine_edition
+    - node.type.magazine
+  module:
+    - text
+id: node.magazine.field_magazine_edition
+field_name: field_magazine_edition
+entity_type: node
+bundle: magazine
+label: Edition
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

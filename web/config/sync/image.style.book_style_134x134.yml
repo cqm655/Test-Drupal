@@ -1,0 +1,14 @@
+uuid: 6439e596-7b79-46a3-8525-c259342a28ab
+langcode: en
+status: true
+dependencies: {  }
+name: book_style_134x134
+label: 'Book Style 134x134'
+effects:
+  0fc5d00f-2233-4510-a788-3db90b3c6fe1:
+    uuid: 0fc5d00f-2233-4510-a788-3db90b3c6fe1
+    id: image_resize
+    weight: 1
+    data:
+      width: 134
+      height: 134

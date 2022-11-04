@@ -1,0 +1,33 @@
+uuid: 1140487d-9b47-461f-9a97-d09634e08ecf
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.magazine.field_magazine_author
+    - field.field.node.magazine.field_magazine_cover_image
+    - field.field.node.magazine.field_magazine_date_of_signing
+    - field.field.node.magazine.field_magazine_edition
+    - field.field.node.magazine.field_magazine_isbn
+    - field.field.node.magazine.field_magazine_publication_date
+    - node.type.magazine
+  module:
+    - user
+id: node.magazine.teaser
+targetEntityType: node
+bundle: magazine
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_magazine_author: true
+  field_magazine_cover_image: true
+  field_magazine_date_of_signing: true
+  field_magazine_edition: true
+  field_magazine_isbn: true
+  field_magazine_publication_date: true
+  langcode: true

@@ -1,0 +1,25 @@
+uuid: ace47fa6-82a8-4709-ba19-84de6c09a911
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:0fa69a32-478b-426e-ae3e-df73cb5db3ce'
+  module:
+    - block_content
+  theme:
+    - olivero
+id: moldovanews
+theme: olivero
+region: sidebar
+weight: 0
+provider: null
+plugin: 'block_content:0fa69a32-478b-426e-ae3e-df73cb5db3ce'
+settings:
+  id: 'block_content:0fa69a32-478b-426e-ae3e-df73cb5db3ce'
+  label: 'Moldova News'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,21 @@
+uuid: 6076f56a-7adc-4959-b54d-2d73a236fe48
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_magazine_publication_date
+    - node.type.magazine
+  module:
+    - datetime
+id: node.magazine.field_magazine_publication_date
+field_name: field_magazine_publication_date
+entity_type: node
+bundle: magazine
+label: 'Publication Date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

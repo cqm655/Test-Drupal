@@ -1,0 +1,17 @@
+uuid: 69b26d60-604f-4082-a7d1-596857803cfe
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Magazine
+type: magazine
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

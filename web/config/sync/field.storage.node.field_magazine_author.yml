@@ -1,0 +1,20 @@
+uuid: 9b21d5ca-4c27-417c-b67c-286f6bef10b4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_magazine_author
+field_name: field_magazine_author
+entity_type: node
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
