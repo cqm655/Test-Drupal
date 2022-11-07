@@ -1,0 +1,7 @@
+ib_tassk_82s.content:
+  path: '/hi'
+  defaults:
+    _controller: '\Drupal\ib_task_82\Controller\ShowPageController::index'
+    _title: 'Create a custom page in drupal 9!'
+  requirements:
+    _permission: 'access content'
