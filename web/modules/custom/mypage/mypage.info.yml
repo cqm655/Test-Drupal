@@ -1,6 +1,6 @@
-name: Hello World Module
+name: MyPage
 description: Creates a page showing "Hello World".
-package: Custom
+package: custom
 type: module
 version: 1.0
 core: 8.x

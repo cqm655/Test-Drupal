@@ -1,0 +1,7 @@
+mypage.content:
+  path: '/page'
+  defaults:
+    _controller: '\Drupal\mypage\Controller\MyPageController::show'
+    _title: 'Hello World'
+  requirements:
+    _permission: 'access content'
