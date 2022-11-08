@@ -25,6 +25,7 @@ class MyBlock extends BlockBase {
     return [
       '#type' => ' #test_var',
       '#markup' => 'This is Drupal 9 custom block',
+      '#test_var' => 'hello world',
     ];
   }
 
