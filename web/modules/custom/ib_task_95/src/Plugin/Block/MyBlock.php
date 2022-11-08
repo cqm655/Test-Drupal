@@ -2,10 +2,6 @@
 
 namespace Drupal\ib_task_95\Plugin\Block;
 
-/**
-* @file
-* Contains \Drupal\ib_task_95.
-*/
 use Drupal\Core\Block\BlockBase;
 
 /**
@@ -23,8 +19,8 @@ class MyBlock extends BlockBase {
    */
   public function build() {
     return [
-      '#theme' => 'myTheme',
-      '#test_var' => 'hello world',
+      '#theme' => 'hello',
+      '#test_var' => $this->t('hello world'),
     ];
   }
 
