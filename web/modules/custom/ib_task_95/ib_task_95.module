@@ -1,0 +1,10 @@
+/**
+ * Implements hook_theme().
+ */
+function [module]_theme($existing, $type, $theme, $path) {
+  return [
+    'my_template' => [
+      'variables' => ['test_var' => NULL],
+    ],
+  ];
+}
