@@ -23,8 +23,7 @@ class MyBlock extends BlockBase {
    */
   public function build() {
     return [
-      '#theme' => 'my_template',
-      '#type' => 'markup',
+      '#type' => ' #test_var',
       '#markup' => 'This is Drupal 9 custom block',
     ];
   }
