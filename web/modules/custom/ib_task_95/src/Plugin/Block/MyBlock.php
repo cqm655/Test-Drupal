@@ -4,7 +4,7 @@ namespace Drupal\ib_task_95\Plugin\Block;
 
 /**
 * @file
-* Contains \Drupal\test_twig\Controller\TestTwigController.
+* Contains \Drupal\ib_task_95.
 */
 use Drupal\Core\Block\BlockBase;
 
@@ -23,7 +23,7 @@ class MyBlock extends BlockBase {
    */
   public function build() {
     return [
-      '#theme' => 'my_template',
+      '#theme' => 'myTheme',
       '#test_var' => 'hello world',
     ];
   }
