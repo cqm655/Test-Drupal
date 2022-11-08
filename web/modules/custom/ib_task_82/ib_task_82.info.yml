@@ -1,0 +1,5 @@
+name: ShowPage Controller
+description: Create a custom page in drupal 9
+package: Costum
+type: module
+core_version_requirement: ^9
