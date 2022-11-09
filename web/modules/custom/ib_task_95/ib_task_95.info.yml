@@ -1,0 +1,7 @@
+name: My Simple Block
+type: module
+description: Defines a custom module
+core_version_requirement: ^9
+package: Custom
+dependencies:
+      - drupal:block
