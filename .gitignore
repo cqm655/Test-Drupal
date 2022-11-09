@@ -23,6 +23,7 @@
 
 # Ignore drupal core (if not versioning drupal sources)
 /web/core
+/web/libraries/
 /web/modules/README.txt
 /web/modules/contrib
 /web/profiles/README.txt
@@ -60,3 +61,4 @@
 /drush
 /drupal.phar
 /drupal
+/web/libraries

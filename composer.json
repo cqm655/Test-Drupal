@@ -12,6 +12,10 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/domaalex/pre-commit-linter.git"
         }
     ],
     "require": {
@@ -33,6 +37,7 @@
         "drupal/module_filter": "^3.2",
         "drupal/panels": "^4.6",
         "drupal/selective_better_exposed_filters": "dev-2.x",
+        "drupal/twig_tweak": "^3.2",
         "drupal/views_attachment_tabs": "1.1",
         "drupal/views_field_view": "1.0.0-beta4",
         "drush/drush": "^11.3"
@@ -107,5 +112,13 @@
                 "      composer remove drupal/core-project-message"
             ]
         }
+    },
+    "scripts-dev": {
+        "post-install-cmd": [
+            "sh ./vendor/adomasevich/pre-commit-linter/scripts/setup.sh"
+        ]
+    },
+    "require-dev": {
+        "adomasevich/pre-commit-linter": "dev-master"
     }
 }
