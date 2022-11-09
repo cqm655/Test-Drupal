@@ -1,0 +1,7 @@
+ib_tassk_27s.content:
+  path: '/show-data'
+  defaults:
+    _controller: '\Drupal\ib_task_27\Controller\PageController::show'
+    _title: 'Book Content'
+  requirements:
+    _permission: 'access content'
