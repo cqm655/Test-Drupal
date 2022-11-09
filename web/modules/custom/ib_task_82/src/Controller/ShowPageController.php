@@ -13,7 +13,6 @@ class ShowPageController extends ControllerBase {
    * Functon to return string.
    */
   public function index() {
-
     return [
       '#markup' => $this->t('Hello World !'),
     ];
