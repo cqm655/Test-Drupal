@@ -1,0 +1,11 @@
+ib_tassk_28s.content:
+  path: '/newpage/{arg}'
+  defaults:
+    _controller: '\Drupal\ib_task_28\Controller\PageController::index'
+    _title: 'A custom page in drupal 9!'
+  requirements:
+    _permission: 'access content'
+    arg: '[0-9]+'
+    
+
+
