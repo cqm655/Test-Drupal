@@ -14,7 +14,7 @@ class PageController extends ControllerBase {
   /**
    * Drupal\Core\Form\FormBuilderInterface $formbuilder.
    *
-   * @var block
+   * @var blockPluginManager
    */
   protected $blockPluginManager;
 
