@@ -1,5 +1,0 @@
-services:
- # Defines a simple service which requires no parameter for its constructor.
-  ib_task_28.service:
-    class: Drupal\ib_task_28\Plugin\Block\SimpleBlock
-   

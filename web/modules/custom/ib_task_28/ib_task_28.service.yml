@@ -1,0 +1,3 @@
+services:
+    RenderService.my_service:
+        class: Drupal\ib_task_28\Services\RenderService

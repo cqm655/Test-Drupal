@@ -19,8 +19,8 @@ class SimpleBlock extends BlockBase {
    */
   public function build() {
     return [
-      '#theme' => 'ib-task-28-template',
-      '#var_block' => $this->t('my block'),
+      '#theme' => 'block_template',
+      '#var_block' => 'my block',
     ];
   }
 
