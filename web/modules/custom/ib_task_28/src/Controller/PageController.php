@@ -3,7 +3,8 @@
 namespace Drupal\ib_task_28\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\ib_task_28\Services\RenderService;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Component\Plugin\PluginManagerBase;
 
 /**
  * Class PageController.
@@ -11,15 +12,37 @@ use Drupal\ib_task_28\Services\RenderService;
 class PageController extends ControllerBase {
 
   /**
+   * Drupal\Core\Form\FormBuilderInterface $formbuilder.
+   *
+   * @var service
+   */
+  protected $service;
+
+  /**
+   * Default constructor.
+   */
+  public function __construct(PluginManagerBase $myservice) {
+    $this->service = $myservice;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+         $container->get('plugin.manager.block')
+       );
+  }
+
+  /**
    * Function index, receive arg from URL, return arg number of blocks.
    */
   public function index($arg) {
 
-    $object_Services_Render = new RenderService();
-
-    $block_manager = $object_Services_Render->serviceAlias();
     // You can hard code configuration or you load from settings.
     $config = [];
+
+    $block_manager = $this->service->createInstance('ib_task_28_Block', $config);
 
     $blocks_to_dysplay = [];
 
@@ -27,8 +50,7 @@ class PageController extends ControllerBase {
 
     while ($i++ < $arg) {
 
-      $plugin_block = $block_manager->createInstance('ib_task_28_Block', $config);
-      $render = $plugin_block->build();
+      $render = $block_manager->build();
       $blocks_to_dysplay[] = $render;
     };
     return [
