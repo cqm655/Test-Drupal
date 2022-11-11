@@ -3,39 +3,23 @@
 namespace Drupal\ib_task_28\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\ib_task_28\Plugin\Block\Ib_task_28_Block;
 
 /**
- * Class ShowPageController.
+ * Class PageController.
  */
 class PageController extends ControllerBase {
 
   /**
-   * Functon to return data.
+   * Function index, output data to view.
    *
    * @param int $arg
-   *   Url argument.
+   *   $arg variable comming from URL.
    */
   public function index($arg) {
 
-    /**
-     * {@inheritdoc}
-     */
-    function build() {
-      return [
-        '#markup' => ' block ',
-      ];
-    }
-
-    $new_block = [];
-
-    $i = 0;
-
-    while ($i++ < $arg) {
-      array_push($new_block, build());
-    }
-
     return [
-      $new_block,
+      '#markup' => $arg,
     ];
   }
 

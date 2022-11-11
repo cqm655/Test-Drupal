@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function ib_task_28_theme($existing, $type, $theme, $path) {
+  return [
+    'ib_block' => [
+            'variables' => ['var_block' => NULL],
+            'template' => 'ib-task-28-template',
+        ],
+  ];
+}
