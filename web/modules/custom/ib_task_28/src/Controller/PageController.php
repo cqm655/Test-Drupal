@@ -14,15 +14,15 @@ class PageController extends ControllerBase {
   /**
    * Drupal\Core\Form\FormBuilderInterface $formbuilder.
    *
-   * @var service
+   * @var block
    */
-  protected $service;
+  protected $blockPluginManager;
 
   /**
-   * Default constructor.
+   * Default constructor for managing plugin blocks.
    */
-  public function __construct(PluginManagerBase $myservice) {
-    $this->service = $myservice;
+  public function __construct(PluginManagerBase $block_plugin_manager) {
+    $this->blockPluginManager = $block_plugin_manager;
   }
 
   /**
@@ -42,7 +42,7 @@ class PageController extends ControllerBase {
     // You can hard code configuration or you load from settings.
     $config = [];
 
-    $block_manager = $this->service->createInstance('ib_task_28_Block', $config);
+    $block_manager = $this->blockPluginManager->createInstance('ib_task_28_Block', $config);
 
     $blocks_to_dysplay = [];
 
