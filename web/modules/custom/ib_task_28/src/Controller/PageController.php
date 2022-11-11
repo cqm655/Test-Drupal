@@ -3,7 +3,6 @@
 namespace Drupal\ib_task_28\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\ib_task_28\Plugin\Block\Ib_task_28_Block;
 
 /**
  * Class PageController.
