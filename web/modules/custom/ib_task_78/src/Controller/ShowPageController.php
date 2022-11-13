@@ -62,7 +62,7 @@ class ShowPageController extends ControllerBase {
 
     $display_current_user = '';
 
-    if ($cached_data == $current_user_name) {
+    if ($cached_user == $current_user_name) {
 
       $display_current_user = $cached_user;
 
