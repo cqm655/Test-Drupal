@@ -59,7 +59,7 @@ class CheckUserRoleController extends ControllerBase {
 
     $current_minutes = floor($current_time / 60);
 
-    if (in_array('administrator', $user_roles) && $current_minutes % 2 == 0) {
+    if (in_array('content_editor', $user_roles) && $current_minutes % 2 == 0) {
 
     }
 
