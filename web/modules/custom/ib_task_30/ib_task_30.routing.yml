@@ -1,0 +1,7 @@
+ib_task_30.content:
+  path: '/check_credentials'
+  defaults:
+    _controller: '\Drupal\ib_task_30\Controller\CheckUserRoleController::checkUserRole'
+    _title: 'Check user roles'
+  requirements:
+    _permission: 'access content'
