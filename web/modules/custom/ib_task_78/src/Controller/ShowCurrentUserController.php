@@ -9,9 +9,9 @@ use Drupal\Core\Session\AccountProxy;
 use Drupal\Core\Cache\CacheBackendInterface;
 
 /**
- * Class ShowPageController.
+ * Class ShowCurrentUserController.
  */
-class ShowPageController extends ControllerBase {
+class ShowCurrentUserController extends ControllerBase {
 
   /**
    * Drupal\Core\Session\AccountProxy definition.
@@ -47,37 +47,31 @@ class ShowPageController extends ControllerBase {
   }
 
   /**
-   * Functon to return data.
+   * Function to return data.
    */
-  public function index() {
+  public function showCurrentUserName() {
 
     $current_user_name = $this->currentUser()->getAccountName();
 
-    $current_user_id = $this->currentUser()->id();
+    $cache_id = $this->currentUser()->id();
 
-    if ($cached_data = $this->cache()->get($current_user_id)) {
+    $display_current_user_name = '';
 
-      $cached_user = $cached_data->data;
-    }
+    if ($cached_data = $this->cache()->get($cache_id)) {
 
-    $display_current_user = '';
+      $cached_data = $cached_data->data;
 
-    if ($cached_user == $current_user_name) {
-
-      $display_current_user = $cached_user;
-
+      $display_current_user_name = $cached_data;
     }
 
     else {
 
-      $display_current_user = $current_user_name;
+      $display_current_user_name = $current_user_name;
 
-      $this->cache()->delete($current_user_id);
-
-      $this->cache()->set($current_user_id, $current_user_name, cache::PERMANENT);
+      $this->cache()->set($cache_id, $current_user_name, cache::PERMANENT);
     }
     return [
-      '#markup' => $display_current_user,
+      '#markup' => $display_current_user_name,
     ];
   }
 

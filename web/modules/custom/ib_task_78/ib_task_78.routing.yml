@@ -1,7 +1,7 @@
 ib_tassk_78s.content:
   path: '/testcache'
   defaults:
-    _controller: '\Drupal\ib_task_78\Controller\ShowPageController::index'
+    _controller: '\Drupal\ib_task_78\Controller\ShowCurrentUserController::showCurrentUserName'
     _title: 'A custom page in drupal 9!'
   requirements:
     _permission: 'access content'
