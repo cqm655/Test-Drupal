@@ -1,0 +1,5 @@
+name: Show User Name 
+description: Show current user on page
+package: Custom
+type: module
+core_version_requirement: ^9
