@@ -63,15 +63,17 @@ class CheckUserRoleController extends ControllerBase {
    */
   public function checkUserRole() {
 
+    $current_user_role = $this->currentUser()->getRoles();
+
     $current_time = $this->dateTime->getCurrentTime();
 
     $current_minutes = floor($current_time / 60);
 
-    if ($current_minutes % 2 == 0) {
+    if (in_array('manager', $current_user_role) && $current_minutes % 2 == 0) {
       return AccessResult::allowed();
     }
 
-    elseif ($current_minutes % 2 != 0 && $this->currentUser()->isAuthenticated()) {
+    elseif (in_array('manager', $current_user_role) && $current_minutes % 2 != 0 && $this->currentUser()->isAuthenticated()) {
       return AccessResult::allowed();
     }
     return AccessResult::forbidden();
