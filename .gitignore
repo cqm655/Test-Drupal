@@ -62,3 +62,6 @@
 /drupal.phar
 /drupal
 /web/libraries
+
+# Ignore ide
+/.idea
