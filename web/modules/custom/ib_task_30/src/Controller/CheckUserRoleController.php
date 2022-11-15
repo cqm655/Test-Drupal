@@ -10,6 +10,7 @@ use Drupal\node\Plugin\views\filter\Access;
 use Drupal\Tests\system\Functional\System\AccessDeniedTest;
 use Symfony\Component\Finder\Exception\AccessDeniedException;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
+use Drupal\Core\Access\AccessResult;
 
 /**
  * Class CheckUserRoleController.
@@ -49,32 +50,31 @@ class CheckUserRoleController extends ControllerBase {
   }
 
   /**
-   * Functon to return string.
+   * Functon to show main page.
+   */
+  public function mainPage() {
+    return [
+      '#markup' => 'ok',
+    ];
+  }
+
+  /**
+   * Functon to check user roles.
    */
   public function checkUserRole() {
-
-    $user_roles = $this->currentUser->getRoles();
 
     $current_time = $this->dateTime->getCurrentTime();
 
     $current_minutes = floor($current_time / 60);
 
-    if (in_array('content_editor', $user_roles) && $current_minutes % 2 == 0) {
-
+    if ($current_minutes % 2 == 0) {
+      return AccessResult::allowed();
     }
 
-    elseif (in_array('content_editor', $user_roles) && $current_minutes % 2 != 0 && $this->currentUser()->isAuthenticated()) {
-
+    elseif ($current_minutes % 2 != 0 && $this->currentUser()->isAuthenticated()) {
+      return AccessResult::allowed();
     }
-
-    else {
-      $throwAccesError = new AccessDeniedHttpException();
-      throw new $throwAccesError();
-    }
-
-    return [
-      '#markup' => 'ok',
-    ];
+    return AccessResult::forbidden();
   }
 
 }
