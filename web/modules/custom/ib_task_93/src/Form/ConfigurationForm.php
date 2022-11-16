@@ -3,6 +3,7 @@
 namespace Drupal\ib_task_93\Form;
 
 use Drupal\Core\CoreServiceProvider;
+use Drupal\Core\Entity\EntityTypeManager;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -22,7 +23,7 @@ class ConfigurationForm extends ConfigFormBase {
   /**
    * {@inheritdoc}
    */
-  public function __construct(CoreServiceProvider $drupal_service) {
+  public function __construct(EntityTypeManager $drupal_service) {
     $this->drupalService = $drupal_service;
   }
 
