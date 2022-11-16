@@ -3,4 +3,4 @@ description: Custom page to show choosen countries
 package: custom
 type: module
 core_version_requirement: ^9
-configure: simpleForm.setting.form
+configure: ib_tassk_93s.content
