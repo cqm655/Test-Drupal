@@ -1,0 +1,6 @@
+name: Show Country Controller
+description: Create a form with countries that create nodes with country name as Title.
+package: custom
+type: module
+core_version_requirement: ^9
+configure: ib_task_93.content

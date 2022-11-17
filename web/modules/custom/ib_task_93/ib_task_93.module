@@ -1,0 +1,25 @@
+<?php
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\node\Entity\Node;
+
+/**
+ * Implements HOOk_entity_presave.
+ */
+
+function ib_task_93_entity_presave(\Drupal\Core\Entity\EntityInterface $entity) {
+   
+    if ($config=\Drupal::config('ib_task_93.content')) {
+      
+      $country_name = $config->get('country');
+      
+      if ($entity->getEntityTypeId() == 'node') {
+        
+            $node_title = $entity->getTitle();
+
+            $entity->set('title', $node_title.$country_name);
+        
+    }
+    
+  }
+
+}
