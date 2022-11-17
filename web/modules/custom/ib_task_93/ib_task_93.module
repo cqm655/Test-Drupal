@@ -1,0 +1,17 @@
+<?php
+use Drupal\Core\Entity\EntityInterface;
+
+function ib_task_93_entity_presave(EntityInterface $entity) {
+
+    $config = \Drupal::config('ib_tassk_93s.content');
+    $country_name = $config->get('country');
+
+
+    if ($entity->getEntityTypeId() == 'node') {
+        if ($entity->getType() == 'article') {
+            $entity->set('title', $country_name);
+        }
+    }
+}
+
+

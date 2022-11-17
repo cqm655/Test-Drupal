@@ -59,6 +59,9 @@ class ConfigurationForm extends ConfigFormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
 
+    // $config - used to save choosen option from $form.
+    $config = $this->config('ib_tassk_93s.content');
+
     $taxonomy_country = [];
 
     $taxonomy_countries = $this->entityTypeManager->getStorage("taxonomy_term")->loadTree('country');
@@ -71,6 +74,7 @@ class ConfigurationForm extends ConfigFormBase {
       '#type' => 'select',
       '#options' => $taxonomy_country,
       '#title' => $this->t('Country'),
+      '#default_value' => $config->get('country'),
     ];
 
     return parent::buildForm($form, $form_state);
@@ -81,22 +85,10 @@ class ConfigurationForm extends ConfigFormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
 
-    // Loading term name by tid from DB.
-    $term = $this->entityTypeManager->getStorage('taxonomy_term')->load($form_state->getValue('country'));
-
-    $term_country_name = $term->label();
-
-    // Retrieve the configuration.
     $this->config('ib_tassk_93s.content')
     // Set the submitted configuration setting.
       ->set('country', $form_state->getValue('country'))
       ->save();
-
-    // Create node and save.
-    $node_country = Node::create(['type' => 'article']);
-    $node_country->set('title', $term_country_name);
-    $node_country->enforceIsNew();
-    $node_country->save();
 
     parent::submitForm($form, $form_state);
 
