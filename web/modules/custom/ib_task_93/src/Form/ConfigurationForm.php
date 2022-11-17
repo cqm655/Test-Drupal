@@ -50,7 +50,7 @@ class ConfigurationForm extends ConfigFormBase {
    */
   protected function getEditableConfigNames() {
     return [
-      'ib_tassk_93s.content',
+      'ib_task_93.content',
     ];
   }
 
@@ -60,11 +60,11 @@ class ConfigurationForm extends ConfigFormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
 
     // $config - used to save choosen option from $form.
-    $config = $this->config('ib_tassk_93s.content');
+    $config = $this->config('ib_task_93.content');
 
     $taxonomy_country = [];
 
-    $taxonomy_countries = $this->entityTypeManager->getStorage("taxonomy_term")->loadTree('country');
+    $taxonomy_countries = $this->entityTypeManager->getStorage('taxonomy_term')->loadTree('country');
     foreach ($taxonomy_countries as $country) {
 
       $taxonomy_country[$country->tid] = $country->name;
@@ -85,7 +85,7 @@ class ConfigurationForm extends ConfigFormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
 
-    $this->config('ib_tassk_93s.content')
+    $this->config('ib_task_93.content')
     // Set the submitted configuration setting.
       ->set('country', $form_state->getValue('country'))
       ->save();

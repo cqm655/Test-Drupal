@@ -1,7 +1,7 @@
-ib_tassk_93s.content:
-   path: '/show-country'
+ib_task_93.content:
+   path: '/select-country'
    defaults:
      _form: '\Drupal\ib_task_93\Form\ConfigurationForm'
-     _title: 'Create a custom page in drupal 9!'
+     _title: 'Choose a country!'
    requirements:
      _permission: 'access content'
