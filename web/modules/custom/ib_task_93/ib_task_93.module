@@ -16,7 +16,7 @@ function ib_task_93_entity_presave(\Drupal\Core\Entity\EntityInterface $entity) 
         
             $node_title = $entity->getTitle();
 
-            $entity->set('title', $title.$country_name);
+            $entity->set('title', $node_title.$country_name);
         
     }
     
