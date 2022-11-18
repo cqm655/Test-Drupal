@@ -13,9 +13,9 @@
         // Create an object with current Date/Time.
         let todayDateJs = new Date();
         // Save in bodyTag variable className tag of body.
-        let bodyTag = document.getElementsByTagName("body")[0].className;
-
-        $('.myBicycle').html(todayDateJs);
+        let bodyTag = $("body").attr("class");
+       
+        $('.currentDate').html(todayDateJs);
         $('.bodyTag').html(bodyTag);
       }
     }
