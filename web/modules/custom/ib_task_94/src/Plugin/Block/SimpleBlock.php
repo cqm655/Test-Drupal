@@ -21,7 +21,6 @@ class SimpleBlock extends BlockBase {
   public function build() {
 
     $items = [];
-
     return [
       '#items' => $items,
       '#theme' => 'block_template',

@@ -40,10 +40,8 @@ class PageController extends ControllerBase {
    */
   public function showIndex(Request $request) {
 
-    $todayDate = $request->request->get('todayDateJs');
-    var_dump($todayDate);
-
     $output = [];
+    $output['#markup'] = '<h1 class="bodyTag"></h1>';
     $output['#attached']['library'][] = 'ib_task_94/ib_task_94';
 
     $config = [];

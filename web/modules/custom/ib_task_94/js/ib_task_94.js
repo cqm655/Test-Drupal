@@ -10,21 +10,13 @@
     Drupal.behaviors.ib_task_94 = {
       attach: function (context, settings) {
 
-      let todayDateJs = new Date();
-      console.log(todayDateJs)
+        // Create an object with current Date/Time.
+        let todayDateJs = new Date();
+        // Save in bodyTag variable className tag of body.
+        let bodyTag = document.getElementsByTagName("body")[0].className;
 
-      $.ajax({
-        type: 'POST',
-        url: '/show-content',
-        data: {todayDateJs: 'todayDateJs'},
-        contentType: 'application/json; charset=utf-8',
-        success: function (response) {
-            alert('succes' );
-        },
-        error: function () {
-            alert('error' );
-        }
-      });
+        $('.myBicycle').html(todayDateJs);
+        $('.bodyTag').html(bodyTag);
       }
     }
-  })(jQuery, Drupal, drupalSettings);
+})(jQuery, Drupal, drupalSettings);
