@@ -1,0 +1,9 @@
+ib_task_94.content:
+  path: '/show-content'
+  defaults:
+    _controller: '\Drupal\ib_task_94\Controller\PageController::showIndex'
+    methods: 'POST'
+    _title: 'A custom page in drupal 9!'
+  requirements:
+    _permission: 'access content'
+ 
