@@ -1,0 +1,5 @@
+name: task_56
+description: Create a modal pop-up on link click
+package: custom
+type: module
+core_version_requirement: ^9

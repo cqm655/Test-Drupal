@@ -1,0 +1,12 @@
+<?php 
+
+/**
+ * Implements hook_block_view_alter().
+ */
+function ib_task_56_block_view_alter(array &$build, \Drupal\Core\Block\BlockPluginInterface $block) {
+  switch ($build['#id']) {
+    // Machine name 
+    case 'ib_task_56':
+      $build['#attached']['library'][] = 'core/drupal.dialog.ajax';
+  }
+}

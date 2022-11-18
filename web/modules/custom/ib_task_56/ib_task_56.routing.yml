@@ -1,0 +1,7 @@
+ib_task_56.content:
+  path: '/show-modal'
+  defaults:
+    _controller: '\Drupal\ib_task_56\Controller\ModalFormController::modalShow'
+    _title: 'Modal Pop-Up'
+  requirements:
+    _permission: 'access content'
