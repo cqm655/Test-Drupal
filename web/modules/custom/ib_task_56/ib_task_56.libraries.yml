@@ -1,0 +1,11 @@
+ib_task_56:
+  version: 1.x
+  js:
+    js/ib_task_56.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+    - core/drupal.dialog.ajax
