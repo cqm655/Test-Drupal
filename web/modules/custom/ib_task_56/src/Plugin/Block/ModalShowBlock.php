@@ -12,7 +12,7 @@ use Drupal\Core\Url;
  *
  * @Block(
  *    id = "Ib_task_56_Block",
- *    admin_label = @Translation("Simple Text Block")
+ *    admin_label = @Translation("Task_56_Modal_Window")
  *  )
  */
 class ModalShowBlock extends BlockBase {
@@ -22,11 +22,14 @@ class ModalShowBlock extends BlockBase {
    */
   public function build() {
 
-    // // Array to set link attributes.
+    // Array to set link attributes.
     $options = [
       'attributes' => ['class' => ['use-ajax'], 'data-dialog-type' => ['modal']],
     ];
-    $internal_link = Link::fromTextAndUrl($this->t('modalOpenLink'), Url::fromUri('http://test.loc/show-modal', $options))->toString();
+    // Get the current path.
+    $current_path = Url::fromRoute('<current>', [], ['absolute' => 'true'])->toString();
+
+    $internal_link = Link::fromTextAndUrl($this->t('modalOpenLink'), Url::fromUri($current_path, $options))->toString();
 
     return [
       '#theme' => 'block-template',

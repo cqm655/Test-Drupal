@@ -1,7 +1,0 @@
-name: task_56_block
-type: module
-description: Defines a custom block
-core_version_requirement: ^9
-package: custom
-dependencies:
-      - drupal:block
