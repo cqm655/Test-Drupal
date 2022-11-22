@@ -1,0 +1,18 @@
+uuid: 44d7f168-ed50-4cbd-9bae-7cbb2d673d57
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.geo_data
+id: node.geo_data.title
+field_name: title
+entity_type: node
+bundle: geo_data
+label: 'coordinates data'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

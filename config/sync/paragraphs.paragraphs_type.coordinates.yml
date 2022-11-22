@@ -1,0 +1,10 @@
+uuid: 0eb3504a-5245-442d-a48b-c6a9dd364a53
+langcode: en
+status: true
+dependencies: {  }
+id: coordinates
+label: Coordinates
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
