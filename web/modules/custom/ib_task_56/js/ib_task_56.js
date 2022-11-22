@@ -1,3 +1,8 @@
+/**
+ * @file
+ * Simple JavaScript hello world file.
+ */
+
  (function ($, Drupal, settings) {
 
     "use strict";
