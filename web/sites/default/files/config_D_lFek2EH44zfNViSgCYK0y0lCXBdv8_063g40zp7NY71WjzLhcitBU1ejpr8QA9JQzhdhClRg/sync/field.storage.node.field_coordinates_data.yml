@@ -1,0 +1,21 @@
+uuid: dc9de3cf-4d3e-4154-b0d1-c7271cb39603
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - node
+    - paragraphs
+id: node.field_coordinates_data
+field_name: field_coordinates_data
+entity_type: node
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

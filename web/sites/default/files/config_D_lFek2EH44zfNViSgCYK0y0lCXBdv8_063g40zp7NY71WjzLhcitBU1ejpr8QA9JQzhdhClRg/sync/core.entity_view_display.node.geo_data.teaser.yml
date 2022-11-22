@@ -1,0 +1,22 @@
+uuid: df5f5a47-b525-420d-bdbf-0962d1f3b019
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.geo_data.field_coordinates_data
+    - node.type.geo_data
+  module:
+    - user
+id: node.geo_data.teaser
+targetEntityType: node
+bundle: geo_data
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_coordinates_data: true
