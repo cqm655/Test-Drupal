@@ -10,11 +10,7 @@
 /web/sites/*/*services*.yml
 
 # Ignore paths that may contain user-generated content
-/web/sites/*/files/css
-/web/sites/*/files/.htaccess
-/web/sites/*/files/js
-/web/sites/*/files/php
-/web/sites/*/files/styles
+/web/sites/*/files
 /web/sites/*/public
 /web/sites/*/private
 /web/sites/*/files-public
