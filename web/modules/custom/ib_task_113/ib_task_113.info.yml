@@ -1,0 +1,5 @@
+name: task_113_text_filter
+type: module
+description: A simple text filter for predefined words
+core_version_requirement: ^9
+package: custom
