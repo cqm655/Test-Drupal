@@ -1,0 +1,37 @@
+<?php 
+
+/**
+* Implements hook_token_info().
+*/
+
+function ib_task_80_token_info() {
+
+
+    $info['tokens']['custom']['link_to_google'] = [
+        'name' => t('google url'),
+        'description' => t('Url of the site'),
+    ];
+    
+    return $info;
+
+}
+
+/**
+ * Implements hook_tokens().
+ */
+function ib_task_80_tokens($type, $tokens, $data, $options, $bubbleable_metadata) {
+
+    $replacements = [];
+
+    foreach ($tokens as $name => $original) {
+      switch ($name) {
+        case 'link_to_google':
+
+          $replacements[$original] = 'http://google.com';
+          break;
+      }
+    }
+  
+    return $replacements;
+
+}
