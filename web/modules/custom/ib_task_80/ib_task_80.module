@@ -6,44 +6,32 @@
 
 function ib_task_80_token_info() {
 
-        $types['custom'] = [ 
-            'name' => t('Custom URL token for redirect'),
-            'description' => t('Tokens helpful for redirect pages.'),
-        ];
 
-        $tokens['link_to_google'] = [
-            'name' => t('custom token name'),
-            'description' => t('Define custom token'),
-        ];
-
-        return [
-            'types' => $types,
-            'tokens' => [
-             'custom' => $tokens
-        ]
-        ];
+    $info['tokens']['custom']['link_to_google'] = [
+        'name' => t('google url'),
+        'description' => t('Url of the site'),
+    ];
+    
+    return $info;
 
 }
 
 /**
  * Implements hook_tokens().
  */
-function hook_tokens($type, $tokens, $data, $options, $bubbleable_metadata) {
+function ib_task_80_tokens($type, $tokens, $data, $options, $bubbleable_metadata) {
 
     $replacements = [];
 
-    if ($type == 'custom') {
-  
-      foreach ($tokens as $name => $original) {
-        switch ($name) {
-          case 'link_to_google':
-            $text = 'http://www.google.com';
-            $replacements[$original] = $text;
-            break;
-        }
+    foreach ($tokens as $name => $original) {
+      switch ($name) {
+        case 'link_to_google':
+
+          $replacements[$original] = 'http://google.com';
+          break;
       }
     }
-
+  
     return $replacements;
 
 }

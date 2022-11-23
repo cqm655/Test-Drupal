@@ -39,6 +39,7 @@
         "drupal/paragraphs": "^1.15",
         "drupal/selective_better_exposed_filters": "dev-2.x",
         "drupal/token": "^1.11",
+        "drupal/token_custom": "^1.0@alpha",
         "drupal/token_filter": "^1.4",
         "drupal/twig_tweak": "^3.2",
         "drupal/views_attachment_tabs": "1.1",
