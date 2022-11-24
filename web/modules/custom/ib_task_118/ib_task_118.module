@@ -1,0 +1,14 @@
+<?php 
+
+use Drupal\Core\Entity\EntityInterface;
+/**
+ * Implements hook_entity_update().
+ */
+ function ib_task_118_entity_update(EntityInterface $entity) {
+    
+    \Drupal::logger('ib_task_118')->info('Node with title %title of type @type hs been updated',
+    [
+        '@type' => $entity->bundle(),
+        '%title' => $entity->label(),
+    ]);
+  }

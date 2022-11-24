@@ -1,0 +1,5 @@
+name: task_118_recent_log
+type: module
+description: Add`s a message to Log Messages.
+core_version_requirement: ^9
+package: custom
