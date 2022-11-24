@@ -1,0 +1,13 @@
+<?php 
+
+/**
+ * Implements hook_entity_insert().
+ */
+ function ib_task_118_node_insert(Drupal\Core\Entity\EntityInterface $entity) {
+    
+    \Drupal::logger('ib_task_118')->info('Node with title %title of type @type hs been updated',
+    [
+        '@type' => $entity->bundle(),
+        '%title' => $entity->label(),
+    ]);
+  }
