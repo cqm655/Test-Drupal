@@ -1,20 +1,16 @@
 <?php
 
-namespace Drupal\ib_task_122\EventSubscriber;
+namespace Drupal\task_122\EventSubscriber;
 
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\Path\CurrentPathStack;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Symfony\Component\HttpKernel\Event\ControllerEvent;
-use Symfony\Component\HttpKernel\KernelEvents;
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Drupal\ib_task_122\Event\Task122Event;
+use Drupal\task_122\Event\Task122Event;
 
 /**
  * Class event subscriber.
  */
-class EventSubscriber implements EventSubscriberInterface {
+class Task122Subscrib implements EventSubscriberInterface {
 
   /**
    * Active route path.
@@ -52,15 +48,8 @@ class EventSubscriber implements EventSubscriberInterface {
    */
   public function onLoad() {
 
-    // Get current path.
-    $current_path = $this->currentStackPath->getPath();
-
-    if ($current_path == '/page-example') {
-
-      $this->loggerFactory->get('Simple Page')->info('Simple Page Loaded');
-
-    }
-
+    // Send message to logg.
+    $this->loggerFactory->get('Simple Page')->alert('Simple Page Load');
   }
 
 }

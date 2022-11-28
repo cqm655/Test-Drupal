@@ -1,0 +1,6 @@
+services:
+  task_122.event_subscriber:
+    class: Drupal\task_122\EventSubscriber\Task122Subscrib
+    arguments: ['@path.current', '@logger.factory']
+    tags:
+        - { name: 'event_subscriber' }

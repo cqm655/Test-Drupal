@@ -1,8 +1,0 @@
-ib_task_122.content:
-  path: '/page-example'
-  defaults:
-    _controller: '\Drupal\ib_task_122\Controller\PageExampleController::showIndex'
-    _title: 'Test Page - eventsubscriber.'
-  requirements:
-    _permission: 'access content'
- 

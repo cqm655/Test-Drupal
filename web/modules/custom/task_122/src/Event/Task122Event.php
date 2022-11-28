@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\ib_task_122\Event;
+namespace Drupal\task_122\Event;
 
 use Drupal\Component\EventDispatcher\Event;
 
