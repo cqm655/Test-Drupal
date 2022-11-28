@@ -1,0 +1,8 @@
+services:
+  ib_task_122.event_subscriber:
+    class: Drupal\ib_task_122\EventSubscriber\EventSubscriber
+    arguments: ['@path.current', '@logger.factory']
+    tags:
+        - { name: 'event_subscriber' }
+ 
+  

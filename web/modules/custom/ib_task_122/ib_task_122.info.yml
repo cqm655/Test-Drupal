@@ -1,0 +1,5 @@
+name: task_122_events_subscribers
+type: module
+description: Custom event/subscribe module.
+core_version_requirement: ^9
+package: custom
