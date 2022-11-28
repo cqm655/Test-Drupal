@@ -28,14 +28,14 @@ class EventSubscriber implements EventSubscriberInterface {
    *
    * @var \Drupal\Core\Logger\LoggerChannelFactoryInterface
    */
-  protected $loggerChanel;
+  protected $loggerFactory;
 
   /**
    * Default constructor.
    */
-  public function __construct(CurrentPathStack $current_stack_path, LoggerChannelFactoryInterface $logger_channel) {
+  public function __construct(CurrentPathStack $current_stack_path, LoggerChannelFactoryInterface $logger_factory) {
     $this->currentStackPath = $current_stack_path;
-    $this->loggerChanel = $logger_channel;
+    $this->loggerFactory = $logger_factory;
   }
 
   /**
@@ -57,7 +57,7 @@ class EventSubscriber implements EventSubscriberInterface {
 
     if ($current_path == '/page-example') {
 
-      $this->loggerChanel->get('Simple Page')->info('Simple Page Loaded');
+      $this->loggerFactory->get('Simple Page')->info('Simple Page Loaded');
 
     }
 
