@@ -1,0 +1,22 @@
+<?php 
+
+/**
+ * @file
+ * Custom hooks and functions for module.
+ */
+
+use Drupal\task_122\Event\Task122Event;
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function task_122_preprocess_html() {
+
+  /** @var \Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher $dispatcher */
+  $dispatcher = \Drupal::service('event_dispatcher');
+  // Create event object passing arguments.
+  $event = new Task122Event();
+  // Call it.
+  $dispatcher->dispatch(Task122Event::EVENT_NAME, $event);
+
+}
