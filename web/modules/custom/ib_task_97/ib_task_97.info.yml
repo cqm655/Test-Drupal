@@ -1,0 +1,5 @@
+name: Task_97_Show_Nodes 
+description: Create a custom page that show all nodes from DB
+package: custom
+type: module
+core_version_requirement: ^9

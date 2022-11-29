@@ -1,0 +1,7 @@
+ib_task_97.content:
+  path: '/show-nodes/{node_id}'
+  defaults:
+    _controller: '\Drupal\ib_task_97\Controller\ShowNodesController::countResponse'
+    _title: 'Task 97 Nodes Content'
+  requirements:
+    _permission: 'access content'
