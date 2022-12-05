@@ -1,0 +1,15 @@
+ib_task_102.content:
+  path: '/add-data'
+  defaults:
+    _controller: '\Drupal\ib_task_102\Controller\ContentTypeController::setData'
+    _title: 'Task 102 Add data to CT.'
+  requirements:
+    _permission: 'access content'
+
+ib_task_102.form:
+   path: '/form-data'
+   defaults:
+     _form: '\Drupal\ib_task_102\Form\MultiStepForm'
+     _title: 'Create form'
+   requirements:
+     _permission: 'access content'

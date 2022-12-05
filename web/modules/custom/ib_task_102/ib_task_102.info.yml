@@ -1,0 +1,6 @@
+name: Task_102_fill_content_type
+type: module
+description: 'Fill a Factory content type with data.'
+core_version_requirement: ^9
+package: custom
+
