@@ -1,0 +1,7 @@
+ib_task_32.form:
+   path: '/task32'
+   defaults:
+     _form: '\Drupal\ib_task_32\Form\Task32Form'
+     _title: 'Choose a country!'
+   requirements:
+     _permission: 'access content'
