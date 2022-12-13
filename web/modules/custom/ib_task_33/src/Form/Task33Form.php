@@ -65,29 +65,41 @@ class Task33Form extends FormBase {
 
       $taxonomy_country[$country->tid] = $country->name;
     }
-  
+
     $form['country'] = [
       '#type' => 'select',
       '#title' => $this->t('Country'),
       '#options' => $taxonomy_country,
       '#ajax' => [
         'callback' => '::myAjaxCallback',
-        // The wrapper actually is the id of the element that
+        // The wrapper actually is the id of the element that.
         'wrapper' => 'first',
       ],
     ];
-  
+
+    if($form_state->getValue('country')) {
+      // Array to store cities.
+      $taxonomy_city = [];
+      // Get cities by reference entity.
+      $taxonomy_cities = $this->entityTypeManager->getStorage('taxonomy_term')->loadByProperties(['field_relation_city_country' => $form_state->getValue('country')]);
+
+      foreach ($taxonomy_cities as $city) {
+
+        $taxonomy_city[$city->id()] = $city->getName();
+      }
+    }
+
     $form['city'] = [
       '#type' => 'select',
       '#title' => $this->t('City'),
-      // The "wrapper" id that the ajax response will be injected into
+      // The "wrapper" id that the ajax response will be injected into.
       // must have an id ="wrapper set on select 1 form'.
       '#prefix' => '<div id="first">',
       '#suffix' => '</div>',
-      // for some reason you  need to set '#validated' => 'true' other wise tou get :
+      // For some reason you  need to set '#validated' => 'true' other wise tou get :.
       // An illegal choice has been detected. Please contact the site administrator.
       '#validated' => 'true',
-      '#options' => [],
+      '#options' => $taxonomy_city,
     ];
 
     $form['submit'] = [
@@ -101,21 +113,6 @@ class Task33Form extends FormBase {
    * Function to process ajaxRequest.
    */
   public function myAjaxCallback(array &$form, FormStateInterface $form_state) {
-    
-    // Get selected value from form.
-    $selectedOption = $form_state->getValue('country');
-    // Array to store cities.
-    $taxonomy_city = [];
-    // Get cities by reference entity.
-    $taxonomy_cities = $this->entityTypeManager->getStorage('taxonomy_term')->loadByProperties(['field_relation_city_country' => $selectedOption]);
-   
-    foreach ($taxonomy_cities as $city) {
-
-      $taxonomy_city[$city->id()] = $city->getName();
-    }
-
-   $form['city']['#options'] = [$taxonomy_city];
-
     return $form['city'];
   }
 
@@ -124,13 +121,13 @@ class Task33Form extends FormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     // Get value of selected option from form.
-    $city_key= $form_state->getValue('city');
+    $city_key = $form_state->getValue('city');
     $city_val = $form['city']['#options'][$city_key];
     // Get value of selected option from form.
-    $country_key= $form_state->getValue('country');
+    $country_key = $form_state->getValue('country');
     $country_val = $form['country']['#options'][$country_key];
 
-       $this->loggerFactory->get('Task 33')->critical('City name is @city, and country name is @country', [
+    $this->loggerFactory->get('Task 33')->critical('City name is @city, and country name is @country', [
         '@city' => $city_val,
         '@country' => $country_val
        ]);
