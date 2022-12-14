@@ -99,22 +99,22 @@ class Task33Form extends FormBase {
   /**
    * Function to returnn an array of Countries.
    */
-  public function getCountry(){
-      // Array to store countries.
-      $countries_array = [];
+  public function getCountry() {
+    // Array to store countries.
+    $countries_array = [];
 
-      $taxonomy_countries = $this->entityTypeManager->getStorage('taxonomy_term')->loadTree('task32_country');
-      foreach ($taxonomy_countries as $country) {
-    
-        $countries_array[$country->tid] = $country->name;
-      }
+    $taxonomy_countries = $this->entityTypeManager->getStorage('taxonomy_term')->loadTree('task32_country');
+    foreach ($taxonomy_countries as $country) {
+
+      $countries_array[$country->tid] = $country->name;
+    }
     return $countries_array;
   }
 
   /**
    * Function to returnn an array of Cities based on Country select form.
    */
-  public function getCity(FormStateInterface $form_state){
+  public function getCity(FormStateInterface $form_state) {
 
     if ($form_state->getValue('country')) {
       // Array to store cities.
@@ -128,20 +128,24 @@ class Task33Form extends FormBase {
       }
       return $cities_array;
     }
-   
+
   }
 
   /**
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
+
     $key_country = $form_state->getValue('country');
     $key_city = $form_state->getValue('city');
-    
+
+    $city_name = $this->entityTypeManager->getStorage('taxonomy_term')->load($key_city);
+    $country_name = $this->entityTypeManager->getStorage('taxonomy_term')->load($key_country);
+
     $this->loggerFactory->get('Task 33')->critical('City name is @city, and country name is @country', [
-        '@city' => $form['city']['#options'][$key_city],
-        '@country' => $form['country']['#options'][$key_country],
-       ]);
+      '@city' => $city_name->getName(),
+      '@country' => $country_name->getName(),
+    ]);
   }
 
 }
