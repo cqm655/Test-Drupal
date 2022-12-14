@@ -1,0 +1,55 @@
+uuid: d72047aa-f417-4e6e-8680-9084a31601a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.task32_city.field_relation_city_country
+    - taxonomy.vocabulary.task32_city
+  module:
+    - path
+    - text
+id: taxonomy_term.task32_city.default
+targetEntityType: taxonomy_term
+bundle: task32_city
+mode: default
+content:
+  description:
+    type: text_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_relation_city_country:
+    type: entity_reference_autocomplete
+    weight: 101
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 100
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden: {  }

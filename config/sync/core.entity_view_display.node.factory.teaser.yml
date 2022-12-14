@@ -1,0 +1,28 @@
+uuid: 3f011ad7-b867-458a-8385-f8b718cebd58
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.factory.field_factory_body
+    - field.field.node.factory.field_factory_city
+    - field.field.node.factory.field_factory_country
+    - field.field.node.factory.field_factory_title
+    - node.type.factory
+  module:
+    - user
+id: node.factory.teaser
+targetEntityType: node
+bundle: factory
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_factory_body: true
+  field_factory_city: true
+  field_factory_country: true
+  field_factory_title: true

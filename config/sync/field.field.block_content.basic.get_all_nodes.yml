@@ -1,0 +1,21 @@
+uuid: 965b04f2-2c72-4699-9d8c-b4b46c0bd210
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.basic
+    - field.storage.block_content.get_all_nodes
+  module:
+    - text
+id: block_content.basic.get_all_nodes
+field_name: get_all_nodes
+entity_type: block_content
+bundle: basic
+label: Node_View
+description: 'show all nodes from DB'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

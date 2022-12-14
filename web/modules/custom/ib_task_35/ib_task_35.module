@@ -1,0 +1,15 @@
+<?php 
+
+/**
+* Implements hook_form_alter().
+*/
+
+function ib_task_35_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+
+    $form['phone'] = [
+        '#type' => 'textfield',
+        '#title' => 'Phone',
+        '#placeholder' => 'Insert phone number',
+    ];
+
+}

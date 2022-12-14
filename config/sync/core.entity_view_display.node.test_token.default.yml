@@ -1,0 +1,28 @@
+uuid: 042faf27-802d-48e2-8437-8495e8d2d96d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.test_token.body
+    - node.type.test_token
+  module:
+    - text
+    - user
+id: node.test_token.default
+targetEntityType: node
+bundle: test_token
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

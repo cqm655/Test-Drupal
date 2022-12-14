@@ -2,6 +2,7 @@ _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
 module:
   admin_toolbar: 0
+  admin_toolbar_links_access_filter: 0
   automated_cron: 0
   big_pipe: 0
   block: 0
@@ -26,6 +27,13 @@ module:
   filter: 0
   help: 0
   history: 0
+  ib_task_102: 0
+  ib_task_113: 0
+  ib_task_32: 0
+  ib_task_33: 0
+  ib_task_35: 0
+  ib_task_80: 0
+  ib_task_97: 0
   image: 0
   link: 0
   menu_link_content: 0
@@ -42,6 +50,9 @@ module:
   system: 0
   taxonomy: 0
   text: 0
+  token: 0
+  token_custom: 0
+  token_filter: 0
   toolbar: 0
   tour: 0
   update: 0

@@ -3,16 +3,25 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.geo_data.body
     - field.field.node.geo_data.field_coordinates_data
     - node.type.geo_data
   module:
     - entity_reference_revisions
+    - text
     - user
 id: node.geo_data.default
 targetEntityType: node
 bundle: geo_data
 mode: default
 content:
+  body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
+    region: content
   field_coordinates_data:
     type: entity_reference_revisions_entity_view
     label: above

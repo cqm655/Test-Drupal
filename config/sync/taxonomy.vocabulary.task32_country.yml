@@ -1,0 +1,8 @@
+uuid: 6413e1d3-d240-4d2e-9808-9b703f888762
+langcode: en
+status: true
+dependencies: {  }
+name: Country
+vid: task32_country
+description: ''
+weight: 0
