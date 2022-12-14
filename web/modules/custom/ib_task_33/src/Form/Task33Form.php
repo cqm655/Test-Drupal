@@ -68,7 +68,6 @@ class Task33Form extends FormBase {
         'wrapper' => 'city_div',
       ],
     ];
-
     $country_id = $form_state->getValue('country');
     $form['city'] = [
       '#type' => 'select',
@@ -116,9 +115,9 @@ class Task33Form extends FormBase {
    * Function to returnn an array of Cities based on Country select form.
    */
   public function getCity($country_id) {
-
-    if ($country_id) {
-      // Array to store cities.
+  
+    if ($country_id != NULL) {
+       // Array to store cities.
       $cities_array = [];
       // Get cities by reference entity.
       $taxonomy_cities = $this->entityTypeManager->getStorage('taxonomy_term')->loadByProperties(['field_relation_city_country' => $country_id]);
@@ -127,6 +126,10 @@ class Task33Form extends FormBase {
 
         $cities_array[$city->id()] = $city->getName();
       }
+      return $cities_array;
+    }
+    else {
+      $cities_array = ['default' => 'Not Available'];
       return $cities_array;
     }
 
@@ -143,10 +146,13 @@ class Task33Form extends FormBase {
     $city_name = $this->entityTypeManager->getStorage('taxonomy_term')->load($key_city);
     $country_name = $this->entityTypeManager->getStorage('taxonomy_term')->load($key_country);
 
-    $this->loggerFactory->get('Task 33')->critical('City name is @city, and country name is @country', [
-      '@city' => $city_name->getName(),
-      '@country' => $country_name->getName(),
-    ]);
+    if(!empty($city_name) && !empty($country_name)) {
+      $this->loggerFactory->get('Task 33')->critical('City name is @city, and country name is @country', [
+        '@city' => $city_name->getName(),
+        '@country' => $country_name->getName(),
+      ]);
+    }
+
   }
 
 }
