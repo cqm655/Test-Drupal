@@ -69,6 +69,7 @@ class Task33Form extends FormBase {
       ],
     ];
 
+    $country_id = $form_state->getValue('country');
     $form['city'] = [
       '#type' => 'select',
       '#title' => $this->t('City'),
@@ -79,7 +80,7 @@ class Task33Form extends FormBase {
       // For some reason you  need to set '#validated' => 'true' other wise tou get :.
       // An illegal choice has been detected. Please contact the site administrator.
       '#validated' => 'true',
-      '#options' => $this->getCity($form_state),
+      '#options' => $this->getCity($country_id),
     ];
 
     $form['submit'] = [
@@ -114,13 +115,13 @@ class Task33Form extends FormBase {
   /**
    * Function to returnn an array of Cities based on Country select form.
    */
-  public function getCity(FormStateInterface $form_state) {
+  public function getCity($country_id) {
 
-    if ($form_state->getValue('country')) {
+    if ($country_id) {
       // Array to store cities.
       $cities_array = [];
       // Get cities by reference entity.
-      $taxonomy_cities = $this->entityTypeManager->getStorage('taxonomy_term')->loadByProperties(['field_relation_city_country' => $form_state->getValue('country')]);
+      $taxonomy_cities = $this->entityTypeManager->getStorage('taxonomy_term')->loadByProperties(['field_relation_city_country' => $country_id]);
 
       foreach ($taxonomy_cities as $city) {
 
