@@ -1,0 +1,19 @@
+uuid: 5d92794e-0b55-4855-a374-f11b2d68597b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_factory_body
+    - node.type.factory
+id: node.factory.field_factory_body
+field_name: field_factory_body
+entity_type: node
+bundle: factory
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -13,7 +13,7 @@ field_name: field_coordinates_data
 entity_type: node
 bundle: geo_data
 label: Coordinates_data
-description: ''
+description: '[custom:link_to_google]'
 required: false
 translatable: false
 default_value: {  }

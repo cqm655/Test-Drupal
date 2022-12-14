@@ -1,23 +1,21 @@
-uuid: 8f9cc3eb-412e-42c6-a7e5-3b7c98234f46
+uuid: f8cd280c-dd9c-464f-8100-57da1a6facf6
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.geo_data.body
-    - field.field.node.geo_data.field_coordinates_data
-    - node.type.geo_data
+    - field.field.node.test_token.body
+    - node.type.test_token
   module:
-    - paragraphs
     - path
     - text
-id: node.geo_data.default
+id: node.test_token.default
 targetEntityType: node
-bundle: geo_data
+bundle: test_token
 mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 122
+    weight: 121
     region: content
     settings:
       rows: 9
@@ -30,24 +28,6 @@ content:
     weight: 10
     region: content
     settings: {  }
-    third_party_settings: {  }
-  field_coordinates_data:
-    type: paragraphs
-    weight: 121
-    region: content
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      closed_mode: summary
-      autocollapse: none
-      closed_mode_threshold: 0
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
-      features:
-        collapse_edit_all: collapse_edit_all
-        duplicate: duplicate
     third_party_settings: {  }
   path:
     type: path

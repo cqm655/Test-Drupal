@@ -1,0 +1,8 @@
+uuid: 484fe7b2-565e-438d-b8e2-6840379bbd5b
+langcode: en
+status: true
+dependencies: {  }
+name: City
+vid: task32_city
+description: ''
+weight: 0

@@ -1,0 +1,29 @@
+uuid: d50b7e57-e563-425d-81a8-8db5f750268c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_relation_city_country
+    - taxonomy.vocabulary.task32_city
+    - taxonomy.vocabulary.task32_country
+id: taxonomy_term.task32_city.field_relation_city_country
+field_name: field_relation_city_country
+entity_type: taxonomy_term
+bundle: task32_city
+label: relation_city_country
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      task32_country: task32_country
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

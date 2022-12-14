@@ -1,0 +1,27 @@
+uuid: 58ab4f9c-fdde-4433-95ab-979f38cb555c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.test_token
+  module:
+    - text
+id: node.test_token.body
+field_name: body
+entity_type: node
+bundle: test_token
+label: Body
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: "<p><a href=\"javascript:void(0);\">[custom:link_to_google]</a></p>\r\n"
+    summary: ''
+    format: basic_html
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

@@ -1,0 +1,30 @@
+uuid: 0a3be6cf-a2ec-461a-871a-31ebece460a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.task32_city.field_relation_city_country
+    - taxonomy.vocabulary.task32_city
+  module:
+    - text
+id: taxonomy_term.task32_city.default
+targetEntityType: taxonomy_term
+bundle: task32_city
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_relation_city_country:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

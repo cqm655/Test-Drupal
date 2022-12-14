@@ -1,0 +1,54 @@
+uuid: 29abf3c3-0cd7-44cc-8ecf-6e5cc0da47ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.factory.field_factory_body
+    - field.field.node.factory.field_factory_city
+    - field.field.node.factory.field_factory_country
+    - field.field.node.factory.field_factory_title
+    - node.type.factory
+  module:
+    - user
+id: node.factory.default
+targetEntityType: node
+bundle: factory
+mode: default
+content:
+  field_factory_body:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_factory_city:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_factory_country:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_factory_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - editor
+    - ib_task_113
+    - token_filter
 _core:
   default_config_hash: P8ddpAIKtawJDi5SzOwCzVnnNYqONewSTJ6Xn0dW_aQ
 name: 'Basic HTML'
@@ -43,3 +45,24 @@ filters:
     status: true
     weight: 11
     settings: {  }
+  token_filter:
+    id: token_filter
+    provider: token_filter
+    status: true
+    weight: 0
+    settings:
+      replace_empty: '0'
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: true
+    weight: 0
+    settings:
+      filter_url_length: 72
+  text_filter:
+    id: text_filter
+    provider: ib_task_113
+    status: true
+    weight: 0
+    settings:
+      words_to_capitalize: 'statesman,and, is who.one?was/the MOST'
