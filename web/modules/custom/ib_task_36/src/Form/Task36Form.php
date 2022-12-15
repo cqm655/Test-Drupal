@@ -58,15 +58,15 @@ class Task36Form extends FormBase {
       '#placeholder' => $this->t('+375...'),
       '#required' => TRUE,
       '#ajax' => [
-      'callback' => '::validatePhoneAjax',
-      'event' => 'keyup',
-      'progress' => [
-      'type' => 'throbber',
-      'message' => $this->t('Verifying phone..'),
+        'callback' => '::validatePhoneAjax',
+        'event' => 'keyup',
+        'progress' => [
+          'type' => 'throbber',
+          'message' => $this->t('Verifying phone..'),
+        ],
       ],
-  ],
-       // Element in wich will be shown result if needed.
-       '#suffix' => '<div class="phone-validation"></div>'
+         // Element in wich will be shown result if needed.
+         '#suffix' => '<div class="phone-validation"></div>'
     ];
 
     $form['phone_number_prefix'] = [
@@ -82,34 +82,35 @@ class Task36Form extends FormBase {
   }
 
   /**
- * {@inheritdoc}
- */
-public function validatePhoneAjax(array &$form, FormStateInterface $form_state) {
-  $response = new AjaxResponse();
+   * {@inheritdoc}
+   */
+  public function validatePhoneAjax(array &$form, FormStateInterface $form_state) {
+    $response = new AjaxResponse();
 
-  $number = $form_state->getValue('phone_number');
-  // Values to compare with country code.
-  $number_prefix = substr($number,0,4);
+    $number = $form_state->getValue('phone_number');
+    // Values to compare with country code.
+    $number_prefix = substr($number, 0, 4);
+    // Get Operator code.
+    $extract_operator_code = substr($number,4,2);
 
-  // Check number prefix to match country code.
-  if (!(($number_prefix) == '+375') && preg_match("/[A-Za-z]+/", $number)) {
-    $response->addCommand(new HtmlCommand('.phone-validation-prefix', 'Number must begin with "+375" or incorrect number format'));
-  }
-  else {
+    $operator_codes = [
+      '25',
+      '33',
+      '44',
+    ];
 
-    $response->addCommand(new HtmlCommand('.phone-validation-prefix', ''));
-
-    // Check if number corresponds to standard "+375" and 13 digits.
-    if (!(preg_match('/^[0-9+]{13}+$/', substr($number,1,strlen($number))))) {
-      $response->addCommand(new HtmlCommand('.phone-validation', 'Phone number must have 10 digits or incorrect format'));
+    // Check number prefix to match country code.
+    if (!(($number_prefix) == '+375') || !(preg_match('/^[0-9+]{14}+$/', $number))  || !in_array($extract_operator_code, $operator_codes)) {
+      $response->addCommand(new HtmlCommand('.phone-validation-prefix', 'Incorrect number format'));
     }
     else {
-      $response->addCommand(new HtmlCommand('.phone-validation', ''));
-    }
-  } 
 
-  return $response;
-}
+      $response->addCommand(new HtmlCommand('.phone-validation-prefix', ''));
+
+    } 
+
+    return $response;
+ }
 
   /**
    * {@inheritdoc}
