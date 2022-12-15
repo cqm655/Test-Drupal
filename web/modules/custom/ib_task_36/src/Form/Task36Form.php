@@ -69,10 +69,6 @@ class Task36Form extends FormBase {
          '#suffix' => '<div class="phone-validation"></div>'
     ];
 
-    $form['phone_number_prefix'] = [
-      '#suffix' => '<div class="phone-validation-prefix"></div>'
-    ];
-
     $form['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Submit'),
@@ -88,29 +84,19 @@ class Task36Form extends FormBase {
     $response = new AjaxResponse();
 
     $number = $form_state->getValue('phone_number');
-    // Values to compare with country code.
-    $number_prefix = substr($number, 0, 4);
-    // Get Operator code.
-    $extract_operator_code = substr($number,4,2);
-
-    $operator_codes = [
-      '25',
-      '33',
-      '44',
-    ];
 
     // Check number prefix to match country code.
-    if (!(($number_prefix) == '+375') || !(preg_match('/^[0-9+]{14}+$/', $number))  || !in_array($extract_operator_code, $operator_codes)) {
-      $response->addCommand(new HtmlCommand('.phone-validation-prefix', 'Incorrect number format'));
+    if (!(preg_match('/[+](375)+(25|33|44|294|292|295|299){1}+[0-9]{7}+$/', $number))) {
+      $response->addCommand(new HtmlCommand('.phone-validation', 'Incorrect number format'));
     }
     else {
 
-      $response->addCommand(new HtmlCommand('.phone-validation-prefix', ''));
+      $response->addCommand(new HtmlCommand('.phone-validation', ''));
 
-    } 
+    }
 
     return $response;
- }
+  }
 
   /**
    * {@inheritdoc}
