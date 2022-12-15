@@ -1,0 +1,5 @@
+name: Task_36
+description: Validate phone number.
+package: custom
+type: module
+core_version_requirement: ^9

@@ -1,0 +1,7 @@
+ib_task_32.form:
+   path: '/task36'
+   defaults:
+     _form: '\Drupal\ib_task_36\Form\Task36Form'
+     _title: 'Phone validation'
+   requirements:
+     _permission: 'access content'
