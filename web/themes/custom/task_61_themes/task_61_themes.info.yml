@@ -3,7 +3,7 @@ base theme: bootstrap
 core: 8.x
 core_version_requirement: ^8 || ^9
 
-name: 'THEMETITLE'
+name: 'task_61_theme'
 description: 'A Drupal Bootstrap 3 based sub-theme.'
 package: 'Bootstrap'
 
