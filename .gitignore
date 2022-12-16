@@ -35,3 +35,5 @@ Pri
 /web/modules
 /web/sites/default/.gitignore
 /web/profiles/README.txt
+/web/sites/default/default.settings.php
+/web/sites/default/default.services.yml
