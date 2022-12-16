@@ -31,7 +31,7 @@ module:
   ib_task_113: 0
   ib_task_32: 0
   ib_task_33: 0
-  ib_task_35: 0
+  ib_task_36: 0
   ib_task_80: 0
   ib_task_97: 0
   image: 0
@@ -65,4 +65,5 @@ theme:
   olivero: 0
   claro: 0
   seven: 0
+  bootstrap: 0
 profile: standard
