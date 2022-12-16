@@ -4,12 +4,8 @@
 /web/core/
 /web/libraries/
 /web/modules/contrib/
-/web/core/
-/web/libraries/
-/modules/contrib/
-/themes/contrib/
-/profiles/contrib/
-/libraries/
+/web/themes/contrib/
+/web/profiles/contrib/
 
 # Ignore sensitive information
 /web/sites/*/settings.php
@@ -32,5 +28,3 @@ Footer
 Footer navigation
 Terms
 Pri
-/web/.gitignore
-/web/sites/.gitignore
