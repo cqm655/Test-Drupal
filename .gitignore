@@ -29,3 +29,7 @@ Footer navigation
 Terms
 Pri
 /web/themes/contrib
+/web/profiles/.gitignore
+/web/modules/.gitignore
+/web/themes/README.txt
+/web/modules
