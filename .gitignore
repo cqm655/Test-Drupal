@@ -33,3 +33,5 @@ Pri
 /web/modules/.gitignore
 /web/themes/README.txt
 /web/modules
+/web/sites/default/.gitignore
+/web/profiles/README.txt
